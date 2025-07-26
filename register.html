@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TerraBook - Register</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif; }
+    body {
+      background: #f5fff5; display: flex; justify-content: center;
+      align-items: center; height: 100vh;
+    }
+    .container {
+      background: #fff; border-radius: 16px; box-shadow: 0 8px 20px rgba(0, 128, 0, 0.1);
+      max-width: 900px; width: 100%; display: flex; overflow: hidden; flex-wrap: wrap;
+    }
+    .form-container { padding: 40px; flex: 1 1 400px; }
+    .form-container h2 { color: #2e7d32; margin-bottom: 20px; }
+    form { display: flex; flex-direction: column; }
+    input, select {
+      padding: 12px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 8px;
+    }
+    button {
+      padding: 12px; background-color: #2e7d32; color: white;
+      border: none; border-radius: 8px; font-weight: bold; cursor: pointer;
+      transition: background 0.3s;
+    }
+    button:hover { background-color: #256d28; }
+    .social-login {
+      display: flex; justify-content: space-between; margin: 15px 0;
+    }
+    .social-login button {
+      background-color: #e0f2f1; color: #2e7d32; flex: 1; margin: 0 5px;
+    }
+    .toggle-link {
+      text-align: center; margin-top: 15px;
+    }
+    .toggle-link a { color: #2e7d32; text-decoration: none; font-size: 0.9rem; }
+    .footer {
+      text-align: center; margin-top: 20px; font-size: 0.8rem; color: #555;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="form-container">
+      <h2>Register a TerraBook Account</h2>
+      <form>
+        <input type="text" placeholder="Full Name" required />
+        <select>
+          <option value="customer">Customer</option>
+          <option value="business">Business</option>
+        </select>
+        <input type="email" placeholder="Email" required />
+        <input type="password" placeholder="Password" required />
+        <div class="social-login">
+          <button type="button">Google</button>
+          <button type="button">Apple ID</button>
+          <button type="button">Facebook</button>
+        </div>
+        <button type="submit">Register</button>
+        <div class="toggle-link">
+          <a href="login.html">Already have an account? Login</a>
+        </div>
+        <div class="footer">
+          By registering, you agree to our Terms & Conditions.<br />
+          &copy; 2025 TerraBook. All rights reserved.
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
