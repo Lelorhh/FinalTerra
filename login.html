@@ -6,147 +6,40 @@
   <title>TerraBook - Login</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <style>
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TerraBook - Login & Register</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: 'Poppins', sans-serif;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif; }
     body {
-      background: #f5fff5;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
+      background: #f5fff5; display: flex; justify-content: center;
+      align-items: center; height: 100vh;
     }
     .container {
-      background: #fff;
-      border-radius: 16px;
-      box-shadow: 0 8px 20px rgba(0, 128, 0, 0.1);
-      max-width: 900px;
-      width: 100%;
-      display: flex;
-      overflow: hidden;
-      flex-wrap: wrap;
+      background: #fff; border-radius: 16px; box-shadow: 0 8px 20px rgba(0, 128, 0, 0.1);
+      max-width: 900px; width: 100%; display: flex; overflow: hidden; flex-wrap: wrap;
     }
-    .form-container {
-      padding: 40px;
-      flex: 1 1 400px;
-    }
-    .form-container h2 {
-      color: #2e7d32;
-      margin-bottom: 20px;
-    }
-    form {
-      display: flex;
-      flex-direction: column;
-    }
+    .form-container { padding: 40px; flex: 1 1 400px; }
+    .form-container h2 { color: #2e7d32; margin-bottom: 20px; }
+    form { display: flex; flex-direction: column; }
     input, select {
-      padding: 12px;
-      margin-bottom: 15px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
+      padding: 12px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 8px;
     }
     button {
-      padding: 12px;
-      background-color: #2e7d32;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      font-weight: bold;
-      cursor: pointer;
+      padding: 12px; background-color: #2e7d32; color: white;
+      border: none; border-radius: 8px; font-weight: bold; cursor: pointer;
       transition: background 0.3s;
     }
-    button:hover {
-      background-color: #256d28;
-    }
-    .toggle-link {
-      text-align: center;
-      margin-top: 15px;
-      color: #2e7d32;
-      cursor: pointer;
-      font-size: 0.9rem;
-    }
+    button:hover { background-color: #256d28; }
     .social-login {
-      display: flex;
-      justify-content: space-between;
-      margin: 15px 0;
+      display: flex; justify-content: space-between; margin: 15px 0;
     }
     .social-login button {
-      background-color: #e0f2f1;
-      color: #2e7d32;
-      flex: 1;
-      margin: 0 5px;
+      background-color: #e0f2f1; color: #2e7d32; flex: 1; margin: 0 5px;
     }
+    .toggle-link {
+      text-align: center; margin-top: 15px;
+    }
+    .toggle-link a { color: #2e7d32; text-decoration: none; font-size: 0.9rem; }
     .footer {
-      text-align: center;
-      margin-top: 20px;
-      font-size: 0.8rem;
-      color: #555;
+      text-align: center; margin-top: 20px; font-size: 0.8rem; color: #555;
     }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <div class="form-container" id="authForm">
-      <h2 id="formTitle">Login to TerraBook</h2>
-      <form id="form">
-        <select id="userType">
-          <option value="customer">Customer</option>
-          <option value="business">Business</option>
-        </select>
-        <input type="email" placeholder="Email" required />
-        <input type="password" placeholder="Password" required />
-        <div class="social-login">
-          <button type="button">Google</button>
-          <button type="button">Apple ID</button>
-          <button type="button">Facebook</button>
-        </div>
-        <button type="submit">Login</button>
-        <div class="toggle-link" onclick="toggleForm()">Don't have an account? Register</div>
-        <div class="footer">By signing in, you agree to our Terms & Conditions.<br>&copy; 2025 TerraBook. All rights reserved.</div>
-      </form>
-    </div>
-  </div>
-
-  <script>
-    let isLogin = true;
-    const formTitle = document.getElementById('formTitle');
-    const form = document.getElementById('form');
-    const toggleLink = document.querySelector('.toggle-link');
-    const userTypeSelect = document.getElementById('userType');
-
-    function toggleForm() {
-      isLogin = !isLogin;
-      formTitle.innerText = isLogin ? 'Login to TerraBook' : 'Register a TerraBook Account';
-      toggleLink.innerText = isLogin ? "Don't have an account? Register" : 'Already have an account? Login';
-
-      // Modify form fields as needed
-      const nameField = document.createElement('input');
-      nameField.placeholder = 'Full Name';
-      nameField.type = 'text';
-      nameField.required = true;
-
-      if (!isLogin && !form.querySelector('input[type="text"]')) {
-        form.insertBefore(nameField, userTypeSelect.nextSibling);
-      } else if (isLogin && form.querySelector('input[type="text"]')) {
-        form.removeChild(form.querySelector('input[type="text"]'));
-      }
-
-      form.querySelector('button[type="submit"]').innerText = isLogin ? 'Login' : 'Register';
-    }
-  </script>
-</body>
-</html>
-
   </style>
 </head>
 <body>
@@ -166,10 +59,16 @@
           <button type="button">Facebook</button>
         </div>
         <button type="submit">Login</button>
-        <div class="toggle-link"><a href="register.html">Don't have an account? Register</a></div>
-        <div class="footer">By signing in, you agree to our Terms & Conditions.<br>&copy; 2025 TerraBook. All rights reserved.</div>
+        <div class="toggle-link">
+          <a href="register.html">Don't have an account? Register</a>
+        </div>
+        <div class="footer">
+          By signing in, you agree to our Terms & Conditions.<br />
+          &copy; 2025 TerraBook. All rights reserved.
+        </div>
       </form>
     </div>
   </div>
 </body>
 </html>
+
